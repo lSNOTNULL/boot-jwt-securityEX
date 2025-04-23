@@ -1,8 +1,8 @@
 package org.example.bootjwtsecurityex.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.bootjwtsecurityex.model.dto.TeamRequestDTO;
 import org.example.bootjwtsecurityex.model.entity.Team;
-import org.example.bootjwtsecurityex.model.repository.TeamRepository;
 import org.example.bootjwtsecurityex.service.TeamService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +12,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/baseball/teams")
-public class BaseballController {
+@RequiredArgsConstructor
+public class TeamController {
     private final TeamService teamService;
-    public BaseballController(TeamService teamService) {
-        this.teamService = teamService;
-    }
 
     @GetMapping
     public ResponseEntity<List<Team>> findAllTeams(){

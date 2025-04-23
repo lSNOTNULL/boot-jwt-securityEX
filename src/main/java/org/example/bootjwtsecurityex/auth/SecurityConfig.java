@@ -6,12 +6,15 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+@Configuration // 이 클래스는 설정 파일이다
 public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf
+                        -> csrf
+                        .ignoringRequestMatchers("/api/**"))
                 .authorizeHttpRequests(
                         auth
                         ->auth
