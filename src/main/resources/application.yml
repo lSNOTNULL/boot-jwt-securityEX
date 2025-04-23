@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: boot-jwt-securityEX
+  profiles:
+    active: dev
